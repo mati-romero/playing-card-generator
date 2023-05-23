@@ -81,7 +81,7 @@
 
 // BUTTONS
 
-.btn-save {
+.btn-create {
     background-color: #33A7C1;
     color: white;
     padding: 10px 20px;
@@ -142,6 +142,30 @@
     }
 }
 
+.btn-save {
+    background-color: #9433C1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+
+    &:hover {
+        color: white;
+        box-shadow: 1px 1px 2px 1px #787B89;
+    }
+}
+
+.btn-folder {
+    background-color: #C14D33;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+
+    &:hover {
+        color: white;
+        box-shadow: 1px 1px 2px 1px #787B89;
+    }
+}
+
 // CARD
 
 .card-edit-content {
@@ -164,6 +188,7 @@
         .card-edit-img {
             width: 260px;
             height: 220px;
+            background-color: white;
         }
 
         .card-edit-desc {

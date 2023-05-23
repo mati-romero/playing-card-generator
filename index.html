@@ -58,9 +58,8 @@
                         </button>
                     </div>
                     <div class="col-12 col-sm-auto mt-4 mt-sm-0">
-                        <button onclick="createCard()" type="button" class="btn btn-save mr-2"><i class="fas fa-plus-square"></i>
-                            Create</button> <!--<i
-                                class="fas fa-save"></i>-->
+                        <button onclick="createCard()" type="button" class="btn btn-create mr-2"><i class="fas fa-plus-square"></i>
+                            Create</button> 
                         <button onclick="cleanCard()" type="button" class="btn btn-cancel"><i class="fas fa-window-close"></i> Cancel</button>
                     </div>
                 </div>
@@ -68,8 +67,8 @@
         </div>
         <div class="col-12 col-xl-6 bg-white card-edit-content p-0 mb-5 mb-xl-0">
             <div id="CardEdit" class="card-edit grass mt-5">
-                <h3 id="CardName" class="card-edit-title">Card Generator</h3>
-                <img id="CardImage" class="card-edit-img" src="./img/mago.png" alt="">
+                <h3 id="CardName" class="card-edit-title">Name</h3>
+                <img id="CardImage" class="card-edit-img" src="./img/01.png" alt="">
                 <p id="CardTip" class="card-edit-tip"><i class="fas fa-seedling"></i> Grass type</p>
                 <div id="CardDesc" class="card-edit-desc">
                     <p>...</p>
@@ -80,8 +79,15 @@
                 </div>
             </div>
             <div class="w-100 text-center my-4">
-                <button onclick="downloadimage()" type="button" class="btn btn-download"><i
-                        class="fas fa-download"></i>Download</button>
+                <button onclick="saveCard()" type="button" class="btn btn-save mt-1">
+                    <i class="fas fa-save"></i> Save
+                </button>
+                <button onclick="downloadimage()" type="button" class="btn btn-download mt-1">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button onclick="" type="button" class="btn btn-folder mt-1">
+                    <i class="far fa-folder-open"></i> My Cards
+                </button>
             </div>
 
             <div>
@@ -124,7 +130,7 @@
                 <div class="modal-footer">
                     <button type="button" onclick="cleanCropper()" class="btn btn-cancel" data-dismiss="modal"><i
                         class="fas fa-window-close"></i> Cancel</button>
-                    <button type="button" onclick="saveImage()" class="btn btn-save" data-dismiss="modal"><i
+                    <button id="save-img-button" type="button" onclick="saveImage()" class="btn btn-save" data-dismiss="modal" disabled><i
                     class="fas fa-images"></i> Save Picture</button>
                 </div>
             </div>
@@ -165,6 +171,9 @@
         const rotateLeftButton = document.getElementById('rotate-left-button');
         const rotateRightButton = document.getElementById('rotate-right-button');
         const btnContent = document.getElementById("btn-content");
+        const saveImgButton = document.getElementById("save-img-button");
+
+        
         let cropper;
 
         imageInput.addEventListener('change', function (event) {
@@ -204,6 +213,7 @@
             applyButton.disabled = true;
             cropper.destroy();
             btnContent.style.visibility = 'hidden';
+            saveImgButton.disabled = false;
         });
 
 
@@ -222,6 +232,7 @@
             previewContainer.innerHTML = '';
             imageInput.value='';
             btnContent.style.visibility = 'hidden';
+            saveImgButton.disabled = true;
         }
     </script>
 </body>

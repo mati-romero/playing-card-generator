@@ -10431,7 +10431,7 @@ h3 {
   cursor: pointer;
 }
 
-.btn-save {
+.btn-create {
   background-color: #33A7C1;
   color: white;
   padding: 10px 20px;
@@ -10439,7 +10439,7 @@ h3 {
   -webkit-transition: ease 0.35s;
   transition: ease 0.35s;
 }
-.btn-save:hover {
+.btn-create:hover {
   color: white;
   -webkit-box-shadow: 1px 1px 2px 1px #787B89;
           box-shadow: 1px 1px 2px 1px #787B89;
@@ -10493,6 +10493,30 @@ h3 {
           box-shadow: 1px 1px 2px 1px #787B89;
 }
 
+.btn-save {
+  background-color: #9433C1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+.btn-save:hover {
+  color: white;
+  -webkit-box-shadow: 1px 1px 2px 1px #787B89;
+          box-shadow: 1px 1px 2px 1px #787B89;
+}
+
+.btn-folder {
+  background-color: #C14D33;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+.btn-folder:hover {
+  color: white;
+  -webkit-box-shadow: 1px 1px 2px 1px #787B89;
+          box-shadow: 1px 1px 2px 1px #787B89;
+}
+
 .card-edit-content {
   border-radius: 12px;
   height: 100%;
@@ -10512,6 +10536,7 @@ h3 {
 .card-edit-content .card-edit .card-edit-img {
   width: 260px;
   height: 220px;
+  background-color: white;
 }
 .card-edit-content .card-edit .card-edit-desc {
   background-color: white;

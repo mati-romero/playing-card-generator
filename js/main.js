@@ -12,22 +12,60 @@ const inputName = document.getElementById('Name');
 const inputDesc = document.getElementById('Desc');
 const inputAtta = document.getElementById('Attack');
 const inputDef = document.getElementById('Defense');
+const opc = document.getElementById('Element');
 const cardName = document.getElementById('CardName');
 const cardDesc = document.getElementById('CardDesc');
 const cardAttack = document.getElementById('CardAttack');
 const cardDefense = document.getElementById('CardDefense');
-class card {
-    constructor(_name, _description, _elem, _attack, _defense) {
+class Card {
+    constructor(_name, _description, _elem, _attack, _defense, _imgPath) {
+        this._name = _name;
+        this._description = _description;
+        this._elem = _elem;
+        this._attack = _attack;
+        this._defense = _defense;
+        this._imgPath = _imgPath;
     }
     get name() {
-        return this.name;
+        return this._name;
     }
     set name(newName) {
-        this.name = newName;
+        this._name = newName;
+    }
+    get description() {
+        return this._description;
+    }
+    set description(newDescription) {
+        this._description = newDescription;
+    }
+    get elem() {
+        return this._elem;
+    }
+    set elem(newElem) {
+        this._elem = newElem;
+    }
+    get attack() {
+        return this._attack;
+    }
+    set attack(newAttack) {
+        this._attack = newAttack;
+    }
+    get defense() {
+        return this._defense;
+    }
+    set defense(newDefense) {
+        this._defense = newDefense;
+    }
+    get imgPath() {
+        return this._imgPath;
+    }
+    set imgPath(newImgPath) {
+        this._imgPath = newImgPath;
     }
 }
+const lista = [];
 function createCard() {
-    cardName.innerHTML = inputName.value != '' ? inputName.value : 'Card Generator';
+    cardName.innerHTML = inputName.value != '' ? inputName.value : 'Name';
     cardDesc.innerHTML = inputDesc.value != '' ? inputDesc.value : '...';
     cardAttack.innerHTML = inputAtta.value != '' ? 'Attack: ' + inputAtta.value : 'Attack: xxxx';
     cardDefense.innerHTML = inputDef.value != '' ? 'Defense: ' + inputDef.value : 'Defense: xxxx';
@@ -37,10 +75,8 @@ function cleanCard() {
     inputDesc.value = '';
     inputAtta.value = '';
     inputDef.value = '';
-    console.log('Aca paso algo');
 }
 function changeElement() {
-    const opc = document.getElementById('Element');
     const cardClass = opc.value;
     const card = document.getElementById('CardEdit');
     card.className = 'card-edit mt-5 ' + cardClass;
@@ -78,4 +114,11 @@ function saveImage() {
     if (image.src != "") {
         cardImage.src = image.src;
     }
+}
+function saveCard() {
+    const image = document.getElementById('image-preview');
+    let card = new Card(inputName.value, inputDesc.value, opc.value, inputAtta.value, inputDef.value, (image != null ? image.src : ''));
+    lista.push(card);
+    console.log(lista);
+    cleanCard();
 }
