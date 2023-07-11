@@ -1,13 +1,4 @@
 "use strict";
-var element;
-(function (element) {
-    element[element["grass"] = 0] = "grass";
-    element[element["water"] = 1] = "water";
-    element[element["fire"] = 2] = "fire";
-    element[element["metal"] = 3] = "metal";
-    element[element["electricity"] = 4] = "electricity";
-})(element || (element = {}));
-;
 const inputName = document.getElementById('Name');
 const inputDesc = document.getElementById('Desc');
 const inputAtta = document.getElementById('Attack');
@@ -69,6 +60,7 @@ function createCard() {
     cardDesc.innerHTML = inputDesc.value != '' ? inputDesc.value : '...';
     cardAttack.innerHTML = inputAtta.value != '' ? 'Attack: ' + inputAtta.value : 'Attack: xxxx';
     cardDefense.innerHTML = inputDef.value != '' ? 'Defense: ' + inputDef.value : 'Defense: xxxx';
+    changeElement();
 }
 function cleanCard() {
     inputName.value = '';

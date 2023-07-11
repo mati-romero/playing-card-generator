@@ -1,5 +1,3 @@
-enum element { grass, water, fire, metal, electricity };
-
 const inputName = document.getElementById('Name') as HTMLInputElement;
 const inputDesc = document.getElementById('Desc') as HTMLInputElement;
 const inputAtta = document.getElementById('Attack') as HTMLInputElement;
@@ -13,8 +11,13 @@ const cardDefense = document.getElementById('CardDefense') as HTMLElement;
 
 class Card {
 
-    constructor(private _name: string, private _description: string, private _elem: string, private _attack: number | string, private _defense: number | string, private _imgPath: string) {
-
+    constructor(
+        private _name: string, 
+        private _description: string, 
+        private _elem: string, 
+        private _attack: number | string, 
+        private _defense: number | string, 
+        private _imgPath: string) {
     }
 
     get name(): string {
@@ -73,6 +76,7 @@ function createCard() {
     cardDesc.innerHTML = inputDesc.value != '' ? inputDesc.value : '...';
     cardAttack.innerHTML = inputAtta.value != '' ? 'Attack: ' + inputAtta.value : 'Attack: xxxx';
     cardDefense.innerHTML = inputDef.value != '' ? 'Defense: ' + inputDef.value : 'Defense: xxxx';
+    changeElement();
 }
 
 function cleanCard() {
